@@ -1,0 +1,21 @@
+version: '3'
+services:
+  tasks-app:
+    container_name: tasks-app
+    depends_on:
+      - tasks-db
+    build: ./
+    ports:
+      - '8080:8080'
+  tasks-db:
+    container_name: tasks-db
+    image: postgres
+    volumes:
+      - tasks-vol:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: tasks-app
+      POSTGRES_PASSWORD: tasks-app
+      POSTGRES_DB: db
+volumes:
+  tasks-vol:
+    external: true

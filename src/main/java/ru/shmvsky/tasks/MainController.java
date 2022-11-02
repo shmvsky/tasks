@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
+    @GetMapping
     @ResponseBody
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, world!";
+    public String index() {
+        return "Hello World";
     }
 
 }
