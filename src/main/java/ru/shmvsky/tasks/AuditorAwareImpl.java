@@ -1,10 +1,9 @@
-package ru.shmvsky.tasks;
-
-import org.springframework.data.domain.AuditorAware;
+package ru.shmvsky.dbaudit.employee;
 
 import java.util.Optional;
 
-//Кто внес изменения
+import org.springframework.data.domain.AuditorAware;
+
 public class AuditorAwareImpl implements AuditorAware<String> {
     @Override
     public Optional<String> getCurrentAuditor() {
