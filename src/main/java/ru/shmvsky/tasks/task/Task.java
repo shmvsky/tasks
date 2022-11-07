@@ -1,9 +1,6 @@
-package ru.shmvsky.tasks.Task;
+package ru.shmvsky.tasks.task;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,26 +8,23 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Task extends TaskAudit {
+
 
     @Id
     @GeneratedValue
     @Column(nullable = false, unique = true)
     private Long id;
-
     @Column(nullable = false, length = 64)
     private String title;
 
     private String description;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "end_date")
-    private Date endDate;
-
-    @Temporal(TemporalType.TIME)
-    @Column(name = "end_time")
-    private Date endTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "due_date")
+    private Date dueDate;
 
 }

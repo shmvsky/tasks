@@ -1,4 +1,4 @@
-package ru.shmvsky.tasks.Task;
+package ru.shmvsky.tasks.task;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
